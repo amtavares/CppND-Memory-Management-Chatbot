@@ -49,7 +49,7 @@ ChatBot::~ChatBot()
 // Destructor OK (up)
 
 // Copy constructor
-Chatbot::Chatbot(Chatbot &source) noexcept{
+Chatbot::Chatbot(const Chatbot & source) {
     std::cout << "ChatBot Copy Constructor" << std::endl;
 
     //GraphNode *_currentNode;
@@ -65,8 +65,8 @@ Chatbot::Chatbot(Chatbot &source) noexcept{
     _image = new wxBitmap();
     *_image = *source._image;
 }
-// Copy Assigning constructor
-Chatbot::Chatbot(Chatbot&& source) noexcept{
+// Copy Assigning operator
+ChatBot &ChatBot::operator=(const ChatBot & source){
     std::cout << "ChatBot Copy Assigning operator" << std::endl;
 
     if(this == &source){
@@ -87,7 +87,7 @@ Chatbot::Chatbot(Chatbot&& source) noexcept{
 
 
 // Move constructor
- Chatbot(Chatbot &source) noexcept{
+ ChatBot::Chatbot(Chatbot && source) noexcept{
      std::cout << "ChatBot Move Constructor" << std::endl;
 
     _chatLogic = source._chatLogic;
@@ -103,8 +103,8 @@ Chatbot::Chatbot(Chatbot&& source) noexcept{
     source._image = NULL;
  }
 
- // Move Assigning constructor
- Chatbot(Chatbot&& source) noexcept{
+ // Move Assigning operator
+ Chatbot &Chatbot::operator=(Chatbot && source) noexcept{
      std::cout << "ChatBot Move Assigning operator" << std::endl;
 
     if(this == &source){
@@ -126,7 +126,6 @@ Chatbot::Chatbot(Chatbot&& source) noexcept{
     return *this;
  }
 
-// Move assignment
 
 ////
 //// EOF STUDENT CODE

@@ -49,7 +49,7 @@ ChatBot::~ChatBot()
 // Destructor OK (up)
 
 // Copy constructor
-Chatbot::Chatbot(const Chatbot & source) {
+ChatBot::ChatBot(const ChatBot & source) {
     std::cout << "ChatBot Copy Constructor" << std::endl;
 
     //GraphNode *_currentNode;
@@ -87,7 +87,7 @@ ChatBot &ChatBot::operator=(const ChatBot & source){
 
 
 // Move constructor
- ChatBot::Chatbot(Chatbot && source) noexcept{
+ ChatBot::ChatBot(ChatBot && source) noexcept{
      std::cout << "ChatBot Move Constructor" << std::endl;
 
     _chatLogic = source._chatLogic;
@@ -97,14 +97,14 @@ ChatBot &ChatBot::operator=(const ChatBot & source){
 
     _chatLogic->SetChatbotHandle(this);
 
-    source._chatlogic = nullptr;
+    source._chatLogic = nullptr;
     source._rootNode = nullptr;
     source._currentNode = nullptr;
     source._image = NULL;
  }
 
  // Move Assigning operator
- Chatbot &Chatbot::operator=(Chatbot && source) noexcept{
+ ChatBot &ChatBot::operator=(ChatBot && source) noexcept{
      std::cout << "ChatBot Move Assigning operator" << std::endl;
 
     if(this == &source){
@@ -118,7 +118,7 @@ ChatBot &ChatBot::operator=(const ChatBot & source){
 
     _chatLogic->SetChatbotHandle(this);
 
-    source._chatlogic = nullptr;
+    source._chatLogic = nullptr;
     source._rootNode = nullptr;
     source._currentNode = nullptr;
     source._image = NULL;

@@ -45,9 +45,6 @@ ChatBot::~ChatBot()
 //// STUDENT CODE
 ////
 
-// Constructor OK (up)
-// Destructor OK (up)
-
 // Copy constructor
 ChatBot::ChatBot(const ChatBot & source) {
     std::cout << "ChatBot Copy Constructor" << std::endl;
